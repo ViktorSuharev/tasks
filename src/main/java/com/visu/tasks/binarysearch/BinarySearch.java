@@ -15,18 +15,18 @@ public class BinarySearch {
 
         int leftBorder = 0;
         int rightBorder = elements.length - 1;
-        int delimiter = rightBorder / 2;
+        int middle = rightBorder / 2;
 
         while (leftBorder <= rightBorder) {
-            if (elements[delimiter] == xElement) {
-                return delimiter;
-            } else if (elements[delimiter] < xElement) {
-                leftBorder = delimiter + 1;
+            if (elements[middle] == xElement) {
+                return middle;
+            } else if (elements[middle] < xElement) {
+                leftBorder = middle + 1;
             } else {
-                rightBorder = delimiter;
+                rightBorder = middle;
             }
 
-            delimiter = leftBorder + (rightBorder - leftBorder) / 2;
+            middle = leftBorder + (rightBorder - leftBorder) / 2;
         }
 
         return ELEMENT_NOT_FOUND;
