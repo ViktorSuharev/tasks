@@ -8,25 +8,17 @@ public class BinarySearch {
         this.elements = elements;
     }
 
-    public int find(double xElement) {
-        if (elements.length == 0) {
-            return ELEMENT_NOT_FOUND;
-        }
+    public int binarySearch(int xElement) {
+        return search(elements, 0, elements.length - 1, xElement);
+    }
 
-        int leftBorder = 0;
-        int rightBorder = elements.length - 1;
-        int middle = rightBorder / 2;
+    private int search(int[] elements, int left, int right, double xElement) {
+        if (left <= right) {
+            int mid = left + (right - left) / 2;
 
-        while (leftBorder <= rightBorder) {
-            if (elements[middle] == xElement) {
-                return middle;
-            } else if (elements[middle] < xElement) {
-                leftBorder = middle + 1;
-            } else {
-                rightBorder = middle;
-            }
-
-            middle = leftBorder + (rightBorder - leftBorder) / 2;
+            if (elements[mid] == x) return mid;
+            else if (elements[mid] > x) return search(elements, left, mid - 1, xElement);
+            else return search(elements, mid + 1, right, xElement);
         }
 
         return ELEMENT_NOT_FOUND;
