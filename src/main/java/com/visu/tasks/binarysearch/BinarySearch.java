@@ -2,7 +2,7 @@ package com.visu.tasks.binarysearch;
 
 public class BinarySearch {
     private double[] elements;
-    private int ELEMENT_NOT_FOUND = -1;
+    private static final int ELEMENT_NOT_FOUND = -1;
 
     public BinarySearch(double[] elements) {
         this.elements = elements;
