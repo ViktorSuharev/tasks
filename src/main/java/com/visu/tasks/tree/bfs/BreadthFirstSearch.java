@@ -14,24 +14,22 @@ public class BreadthFirstSearch implements TreeSearch {
 
     public void goRound(TreeNode node) {
         Queue<TreeNode> nodeQueue = new ArrayDeque<>();
-        nodeQueue.add(node);
-        goRound(nodeQueue);
-    }
 
-    private void goRound(Queue<TreeNode> nodeQueue) {
-        TreeNode node = nodeQueue.poll();
-        if (node == null) {
-            return;
-        }
+        while (node != null) {
+            if (node == null) {
+                return;
+            }
 
-        nodes.add(node.getVal());
+            nodes.add(node.getVal());
 
-        if (node.getLeft() != null) {
-            nodeQueue.add(node.getLeft());
-        }
+            if (node.getLeft() != null) {
+                nodeQueue.add(node.getLeft());
+            }
 
-        if (node.getRight() != null) {
-            nodeQueue.add(node.getRight());
+            if (node.getRight() != null) {
+                nodeQueue.add(node.getRight());
+            }
+            node = nodeQueue.poll();
         }
     }
 
