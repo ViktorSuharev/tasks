@@ -1,4 +1,4 @@
-package com.visu.tasks.binarytreepaths;
+package com.visu.tasks.tree.binarytreepaths;
 
 public class Main {
     public static void main(String[] args) {

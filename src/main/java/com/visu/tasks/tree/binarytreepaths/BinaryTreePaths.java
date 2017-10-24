@@ -1,4 +1,4 @@
-package com.visu.tasks.binarytreepaths;
+package com.visu.tasks.tree.binarytreepaths;
 
 import java.util.ArrayList;
 import java.util.List;
