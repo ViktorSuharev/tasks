@@ -2,14 +2,12 @@ package com.visu.tasks.tree.dfs;
 
 import com.visu.tasks.tree.TestData;
 import com.visu.tasks.tree.TreeNode;
+import org.junit.Test;
 
-public class Main {
-    public static void main(String[] args) {
-        testCase1();
-        testCase2();
-    }
+public class Tester {
 
-    private static void testCase1() {
+    @Test
+    public void testCase1() {
         TreeNode root = TestData.getTree1();
 
         DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
@@ -17,7 +15,8 @@ public class Main {
         depthFirstSearch.printPath();
     }
 
-    private static void testCase2() {
+    @Test
+    public void testCase2() {
         TreeNode root = TestData.getTree2();
 
         DepthFirstSearch depthFirstSearch = new DepthFirstSearch();
