@@ -34,10 +34,18 @@ public class BinaryTreeHeap implements Heap {
     }
 
     private void swap(Node parent, Node child) {
-
-
-        Node tmpNode = parent;
-        child = parent;
-        parent = tmpNode;
+        Node superParent = parent.getParent();
+        if (parent.equals(superParent.getLeft())) {
+            superParent.setLeft(child);
+            if (child.equals(parent.getLeft())) {
+                child.setLeft(parent);
+            } else {
+                child.setRight(parent);
+            }
+        } else {
+            superParent.setRight(child);
+        }
+        child.setParent(superParent);
+        parent.setParent(child);
     }
 }
