@@ -37,15 +37,20 @@ public class BinaryTreeHeap implements Heap {
         Node superParent = parent.getParent();
         if (parent.equals(superParent.getLeft())) {
             superParent.setLeft(child);
-            if (child.equals(parent.getLeft())) {
-                child.setLeft(parent);
-            } else {
-                child.setRight(parent);
-            }
+            chooseChildAndSwap(parent, child);
         } else {
             superParent.setRight(child);
+            chooseChildAndSwap(parent, child);
         }
         child.setParent(superParent);
         parent.setParent(child);
+    }
+
+    private void chooseChildAndSwap(Node parent, Node child) {
+        if (child.equals(parent.getLeft())) {
+            child.setLeft(parent);
+        } else {
+            child.setRight(parent);
+        }
     }
 }
